@@ -133,7 +133,7 @@ export default function WorkflowSheet({
           {/* Tab Content */}
           <div className="flex-1 overflow-hidden relative">
             {activeTab === 'comments' ? (
-              <CommentFeed workflowId={workflow.id} currentStaff={currentStaff} />
+              <CommentFeed workflowId={workflow.id} currentStaff={currentStaff} workflowStatus={workflow.status} />
             ) : (
               <DocumentList workflowId={workflow.id} currentStaff={currentStaff} />
             )}
