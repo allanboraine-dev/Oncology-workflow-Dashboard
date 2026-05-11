@@ -1,9 +1,11 @@
 'use client';
 
-import { useState } from 'react';
-import Dashboard from '@/components/dashboard';
+import { useState, lazy, Suspense } from 'react';
 import Login from '@/components/login';
 import { StaffProfile } from '@/types';
+import { Loader2 } from 'lucide-react';
+
+const Dashboard = lazy(() => import('@/components/dashboard'));
 
 export default function Home() {
   const [user, setUser] = useState<StaffProfile | null>(null);
@@ -20,5 +22,13 @@ export default function Home() {
     return <Login onLogin={handleLogin} />;
   }
 
-  return <Dashboard currentUser={user} onLogout={handleLogout} />;
+  return (
+    <Suspense fallback={
+      <div className="flex h-screen w-full items-center justify-center bg-slate-50">
+        <Loader2 className="h-8 w-8 animate-spin text-teal-600" />
+      </div>
+    }>
+      <Dashboard currentUser={user} onLogout={handleLogout} />
+    </Suspense>
+  );
 }
