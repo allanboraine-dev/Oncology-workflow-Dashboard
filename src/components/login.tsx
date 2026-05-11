@@ -1,9 +1,7 @@
 'use client';
 
-import { useQuery } from '@tanstack/react-query';
-import { supabase } from '@/lib/supabase';
 import { StaffProfile } from '@/types';
-import { Loader2, User, Stethoscope, HeartPulse, Building } from 'lucide-react';
+import { User, Stethoscope, HeartPulse, Building } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 const ROLE_ICONS: Record<string, any> = {
@@ -12,23 +10,14 @@ const ROLE_ICONS: Record<string, any> = {
   'Reception': Building,
 };
 
+const STAFF_PROFILES: StaffProfile[] = [
+  { id: '277936f6-3d0c-48ea-a76a-431097cee3f3', name: 'Dr. Ibrahim', role: 'Admin/Doctor', avatar_url: 'https://i.pravatar.cc/150?u=s1' },
+  { id: '7023bdb9-7b90-40e7-b5d2-e3056f751894', name: 'Sisters', role: 'Nurse', avatar_url: null },
+  { id: '7877e8b8-615b-4d77-b684-149fdb072090', name: 'Zayneen', role: 'Reception', avatar_url: null },
+  { id: 'd314498e-3701-4468-9ab1-429861fb58e1', name: 'Farzana', role: 'Reception', avatar_url: null },
+];
+
 export default function Login({ onLogin }: { onLogin: (staff: StaffProfile) => void }) {
-  const { data: staffList, isLoading } = useQuery({
-    queryKey: ['staff_profiles'],
-    queryFn: async () => {
-      const { data } = await supabase.from('staff_profiles').select('*').order('role');
-      return data as StaffProfile[];
-    }
-  });
-
-  if (isLoading) {
-    return (
-      <div className="flex h-screen w-full items-center justify-center bg-slate-50">
-        <Loader2 className="h-8 w-8 animate-spin text-teal-600" />
-      </div>
-    );
-  }
-
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-center bg-slate-50 p-6">
       <div className="flex flex-col items-center mb-10">
@@ -40,7 +29,7 @@ export default function Login({ onLogin }: { onLogin: (staff: StaffProfile) => v
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl w-full">
-        {staffList?.map((staff) => {
+        {STAFF_PROFILES.map((staff) => {
           const Icon = ROLE_ICONS[staff.role] || User;
           return (
             <Card 

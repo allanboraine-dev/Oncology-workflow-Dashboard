@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Dashboard from '@/components/dashboard';
 import Login from '@/components/login';
 import { StaffProfile } from '@/types';
