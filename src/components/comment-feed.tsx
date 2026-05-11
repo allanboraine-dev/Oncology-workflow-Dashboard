@@ -101,7 +101,7 @@ export default function CommentFeed({
               return (
                 <div key={comment.id} className={`flex gap-3 ${isMe ? 'flex-row-reverse' : ''}`}>
                   <Avatar className="h-8 w-8 shrink-0 mt-1 ring-2 ring-white shadow-sm">
-                    <AvatarImage src={staff?.avatar_url} />
+                    <AvatarImage src={staff?.avatar_url || undefined} />
                     <AvatarFallback className="bg-teal-100 text-teal-700 text-xs font-semibold">
                       {staff?.name?.charAt(0) || 'U'}
                     </AvatarFallback>
