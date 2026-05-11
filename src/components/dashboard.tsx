@@ -88,7 +88,9 @@ export default function Dashboard({ currentUser, onLogout }: { currentUser: Staf
           </div>
           <div className="flex-1">
             <h1 className="text-lg font-semibold text-slate-900 tracking-tight leading-tight">Lenmed Oncology</h1>
-            <p className="text-xs text-slate-500 font-medium">Workflow Overlay</p>
+            <p className="text-xs text-slate-500 font-medium">
+              Workflow Overlay • <span className="text-teal-600 font-semibold tracking-wide">BORAINE TECH</span>
+            </p>
           </div>
         </div>
 

@@ -57,6 +57,12 @@ export default function Login({ onLogin }: { onLogin: (staff: StaffProfile) => v
           );
         })}
       </div>
+
+      <div className="mt-16 text-center">
+        <p className="text-sm font-semibold text-slate-400 tracking-wide">
+          Developed by <span className="text-teal-600">BORAINE TECH</span>
+        </p>
+      </div>
     </div>
   );
 }
