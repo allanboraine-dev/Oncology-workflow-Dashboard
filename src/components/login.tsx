@@ -35,7 +35,7 @@ export default function Login({ onLogin }: { onLogin: (staff: StaffProfile) => v
         <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-teal-600 text-white font-bold text-3xl mb-4 shadow-lg">
           L
         </div>
-        <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Lenmed Oncology</h1>
+        <h1 className="text-2xl font-bold text-slate-900 tracking-tight text-center">Dr S Ibrahim Oncology Patient Dashboard</h1>
         <p className="text-slate-500 font-medium mt-1">Select your profile to login</p>
       </div>
 

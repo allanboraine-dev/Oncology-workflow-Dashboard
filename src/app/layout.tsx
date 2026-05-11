@@ -7,8 +7,8 @@ import { Toaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Lenmed Oncology Workflow",
-  description: "Workflow Overlay Dashboard for Lenmed Hospital",
+  title: "Dr S Ibrahim Oncology Patient Dashboard",
+  description: "Real-time workflow and communication overlay for oncology staff.",
 };
 
 export default function RootLayout({
