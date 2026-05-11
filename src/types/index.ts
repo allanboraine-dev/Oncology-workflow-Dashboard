@@ -4,7 +4,7 @@ export type StaffProfile = {
   id: string;
   name: string;
   role: Role;
-  avatar_url?: string;
+  avatar_url: string | null;
 };
 
 export type Patient = {
